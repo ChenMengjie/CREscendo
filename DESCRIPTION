@@ -1,0 +1,27 @@
+Package: CREscendo
+Type: Package
+Title: CREscendo: Identifying cell-type specific activities of cis-regulatory elements from scATAC-seq data
+Version: 0.1.1
+Author: Mengjie Chen
+Maintainer: Mengjie Chen <mengjiechen@uchicago.edu>
+Description: CREscendo is designed to analyze differential usage of CREs by examining differences in Tn5 cleavage frequencies across cell types. This approach helps to recover regulatory signals that peak-based analyses often overlook.
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.6.0),
+    Seurat,
+    stringi,
+    ggplot2,
+    Rsamtools, 
+    Signac,
+    GenomicRanges,
+    tidyr
+Imports:
+    reshape2,
+    patchwork, 
+    dplyr,
+    viridis,
+    ChIPseeker,
+    corrplot
+RoxygenNote: 7.3.1
