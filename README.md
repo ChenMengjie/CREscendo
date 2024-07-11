@@ -18,14 +18,11 @@ devtools::install_github("ChenMengjie/CREscendo")
 ## Tutorial
 
 [Tutorial 1: Analysis of 10X Genomics human PBMC Single-Cell Multiome Data types](https://htmlpreview.github.io/?https://github.com/ChenMengjie/CREscendo/blob/main/Tutorials/CREscendo_10X_multiome.html)
-
-Pre-processed dataset can be downloaded from: (https://drive.google.com/file/d/1N34NZYH1LfDs4RPE9y_FGDMc7Cx2cMVj/view?usp=share_link)
-
+[Pre-processed dataset 1](https://drive.google.com/file/d/1N34NZYH1LfDs4RPE9y_FGDMc7Cx2cMVj/view?usp=share_link)
 
 [Tutorial 2: Analysis of 10X Genomics human PBMC ATAC v2 Chromium X type](https://htmlpreview.github.io/?https://github.com/ChenMengjie/CREscendo/blob/main/Tutorials/CREscendo_10X_scATAC_Chromium_X2.html)
 
-Pre-processed dataset can be downloaded from:
-(https://drive.google.com/file/d/1CtnCInRLnGcnz6wTp_hXPSpP9ZuMs_93/view?usp=share_link)
+[Pre-processed dataset 2](https://drive.google.com/file/d/1CtnCInRLnGcnz6wTp_hXPSpP9ZuMs_93/view?usp=share_link)
 
 
 ### Author
