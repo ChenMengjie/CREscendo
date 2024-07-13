@@ -403,9 +403,9 @@ library(ggrepel)</code></pre>
 <div id="dataset-10k-human-pbmcs-atac-v2-chromium-x" class="section level1">
 <h1>Dataset: 10k Human PBMCs, ATAC v2, Chromium X</h1>
 <p>We downloaded the Human PBMCs scATAC-seq dataset, which includes peak
-files and fragment files, from 10x Genomics. The dataset initially
-contained 10,273 PBMC nuclei. We conducted quality control and cell type
-annotations using Signac as below.</p>
+files and fragment files, from <a href="https://www.10xgenomics.com/datasets/10k-human-pbmcs-atac-v2-chromium-x-2-standard">10x
+Genomics</a>. The dataset initially contained 10,273 PBMC nuclei. We
+conducted quality control and cell type annotations using <a href="https://stuartlab.org/signac/">Signac</a> as below.</p>
 <pre class="r"><code>counts &lt;- Read10X_h5(filename = &quot;10k_pbmc_ATACv2_nextgem_Chromium_X_filtered_peak_bc_matrix.h5&quot;)
 metadata &lt;- read.csv(
   file = &quot;10k_pbmc_ATACv2_nextgem_Chromium_X_singlecell.csv&quot;,
@@ -513,7 +513,9 @@ for(i in levels(pbmc)) {
   newid &lt;- names(which.max(table(pbmc$predicted.id[cells_to_reid])))
   Idents(pbmc, cells = cells_to_reid) &lt;- newid
 }</code></pre>
-<p>Or you can start with pre-processed object.</p>
+<p>Or you can start with pre-processed object, which can be downloaded
+from <a href="https://drive.google.com/file/d/1CtnCInRLnGcnz6wTp_hXPSpP9ZuMs_93/view?usp=share_link">Pre-processed
+dataset 2</a>.</p>
 <pre class="r"><code>load(&quot;/path/to/pbmc_ATAC_10k_v2_chromium_x_2_afterQC.rda&quot;)
 pbmc
 peaks.gr &lt;- granges(pbmc@assays$peaks)
@@ -521,11 +523,12 @@ peaks.gr &lt;- peaks.gr[grep(&quot;chr&quot;, seqnames(peaks.gr))]
 peaks.gr</code></pre>
 <p>For the annotation of cis-regulatory elements (CREs), we utilized
 resources from the ENCODE Encyclopedia, specifically the Registry of
-cCREs Version 3 from SCREEN. This resource details 1,063,878 candidate
-CREs identified by segregating signals across all biospecimen sourced
-from 1,518 cell types. These CREs are categorized further into candidate
-promoters, candidate proximal enhancers, candidate distal enhancers, and
-are also annotated based on their CTCF binding status.</p>
+cCREs Version 3 from <a href="https://downloads.wenglab.org/V3/GRCh38-cCREs.bed">SCREEN</a>.
+This resource details 1,063,878 candidate CREs identified by segregating
+signals across all biospecimen sourced from 1,518 cell types. These CREs
+are categorized further into candidate promoters, candidate proximal
+enhancers, candidate distal enhancers, and are also annotated based on
+their CTCF binding status.</p>
 <pre class="r"><code>anno_CREs &lt;- read.delim(&quot;/path/to/GRCh38-cCREs.bed&quot;, header = F)
 CRE_gr &lt;- GRanges(ranges=IRanges(start=anno_CREs[, 2], end=anno_CREs[, 3]),
                   seqnames=anno_CREs[, 1],
@@ -618,6 +621,8 @@ head(cell_annotation)</code></pre>
 <p>Cell annotations should be provided as a two-column data frame. The
 first column should contain the cell IDs, and the second column should
 contain the corresponding cell types.</p>
+<p>The fragment and itself index files were downloaded from <a href="https://www.10xgenomics.com/datasets/10k-human-pbmcs-atac-v2-chromium-x-2-standard">10x
+Genomics</a>.</p>
 <pre class="r"><code>tbx.path &lt;- &quot;/path/to/10k_pbmc_ATACv2_nextgem_Chromium_X_fragments.tsv.gz&quot;
 index.path &lt;- &quot;/path/to/10k_pbmc_ATACv2_nextgem_Chromium_X_fragments.tsv.gz.tbi&quot;
 
@@ -982,7 +987,7 @@ dq &lt;- ggplot(all_stats, aes(x = avg_log2FC, y = chisq_stat)) +
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/Chicago
-##  date     2024-07-09
+##  date     2024-07-11
 ##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────

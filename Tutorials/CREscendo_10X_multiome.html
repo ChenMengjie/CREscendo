@@ -427,12 +427,13 @@ library(ggrepel)</code></pre>
 <h1>Dataset: PBMC multiome from a Healthy Donor - Granulocytes Removed
 Through Cell Sorting (10k)</h1>
 <p>We downloaded the PBMC multiome dataset, which includes peak files
-and fragment files, from 10x Genomics The multiome platform produces
-data that includes both ATAC and RNA profiles from the same cells. Each
-cell’s data is linked by a unique cell barcode. The dataset is estimated
-to contain 11,898 cells. We conducted quality control using Signac as
-showed in their tutorial (<a href="https://stuartlab.org/signac/articles/pbmc_multiomic" class="uri">https://stuartlab.org/signac/articles/pbmc_multiomic</a>)
-and the object is saved as <code>pbmc_10X_multiome.rds</code>.</p>
+and fragment files, from <a href="https://www.10xgenomics.com/datasets/pbmc-from-a-healthy-donor-granulocytes-removed-through-cell-sorting-10-k-1-standard-2-0-0">10x
+Genomics</a>. The multiome platform produces data that includes both
+ATAC and RNA profiles from the same cells. Each cell’s data is linked by
+a unique cell barcode. The dataset is estimated to contain 11,898 cells.
+We conducted quality control using Signac as showed in their <a href="https://stuartlab.org/signac/articles/pbmc_multiomic">tutorial</a>
+and the object is saved as <code>pbmc_10X_multiome.rds</code>,
+downloadable from this <a href="https://drive.google.com/file/d/1N34NZYH1LfDs4RPE9y_FGDMc7Cx2cMVj/view?usp=share_link">link</a>.</p>
 <pre class="r"><code>pbmc &lt;- readRDS(&quot;/path/to/pbmc_10X_multiome.rds&quot;)
 pbmc
 peaks.gr &lt;- granges(pbmc@assays$peaks)
@@ -440,11 +441,12 @@ peaks.gr &lt;- peaks.gr[grep(&quot;chr&quot;, seqnames(peaks.gr))]
 peaks.gr</code></pre>
 <p>For the annotation of cis-regulatory elements (CREs), we utilized
 resources from the ENCODE Encyclopedia, specifically the Registry of
-cCREs Version 3 from SCREEN. This resource details 1,063,878 candidate
-CREs identified by segregating signals across all biospecimen sourced
-from 1,518 cell types. These CREs are categorized further into candidate
-promoters, candidate proximal enhancers, candidate distal enhancers, and
-are also annotated based on their CTCF binding status.</p>
+cCREs Version 3 from <a href="https://downloads.wenglab.org/V3/GRCh38-cCREs.bed">SCREEN</a>.
+This resource details 1,063,878 candidate CREs identified by segregating
+signals across all biospecimen sourced from 1,518 cell types. These CREs
+are categorized further into candidate promoters, candidate proximal
+enhancers, candidate distal enhancers, and are also annotated based on
+their CTCF binding status.</p>
 <pre class="r"><code>anno_CREs &lt;- read.delim(&quot;/path/to/GRCh38-cCREs.bed&quot;, header = F)
 CRE_gr &lt;- GRanges(ranges=IRanges(start=anno_CREs[, 2], end=anno_CREs[, 3]),
                   seqnames=anno_CREs[, 1],
@@ -525,7 +527,7 @@ cleavage sites for selected cell types in PBMC Multiome dataset. Cell
 annotations should be provided as a two-column data frame. The first
 column should contain the cell IDs, and the second column should contain
 the corresponding cell types The cell annotation for this example data
-set has been saved in a RData file.</p>
+set has been saved in an RData <a href="https://github.com/ChenMengjie/CREscendo/blob/main/data/cell_annotation_PBMC_multiome.rda">file</a>.</p>
 <pre class="r"><code>load(&quot;/path/to/cell_annotation_PBMC_multiome.RData&quot;)
 head(cell_annotation)</code></pre>
 <p>You can also prepare the data frame as the following example</p>
@@ -541,6 +543,8 @@ head(cell_annotation)</code></pre>
 ## AAACAGCCACACTAAT-1 CD8 Naive AAACAGCCACACTAAT-1
 ## AAACAGCCACCAACCG-1 CD8 Naive AAACAGCCACCAACCG-1
 ## AAACAGCCAGGATAAC-1 CD4 Naive AAACAGCCAGGATAAC-1</code></pre>
+<p>The fragment and its index files were downloaded from <a href="https://www.10xgenomics.com/datasets/pbmc-from-a-healthy-donor-granulocytes-removed-through-cell-sorting-10-k-1-standard-2-0-0">10x
+Genomics</a></p>
 <pre class="r"><code>tbx.path &lt;- &quot;/path/to/pbmc_granulocyte_sorted_10k_atac_fragments.tsv.gz&quot;
 index.path &lt;- &quot;/path/to/pbmc_granulocyte_sorted_10k_atac_fragments.tsv.gz.tbi&quot;
 
@@ -903,7 +907,7 @@ dq &lt;- ggplot(all_stats, aes(x = avg_log2FC, y = chisq_stat)) +
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/Chicago
-##  date     2024-07-10
+##  date     2024-07-11
 ##  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
