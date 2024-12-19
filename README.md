@@ -18,7 +18,6 @@ devtools::install_github("ChenMengjie/CREscendo")
 ## Tutorial
 
 
-
 [Tutorial 1: Analysis of 10X Genomics human PBMC Single-Cell Multiome Data types](https://htmlpreview.github.io/?https://github.com/ChenMengjie/CREscendo/blob/main/Tutorials/CREscendo_10X_multiome.html)
 
 [Pre-processed dataset 1](https://drive.google.com/file/d/1N34NZYH1LfDs4RPE9y_FGDMc7Cx2cMVj/view?usp=share_link)
@@ -27,8 +26,12 @@ devtools::install_github("ChenMengjie/CREscendo")
 
 [Pre-processed dataset 2](https://drive.google.com/file/d/1CtnCInRLnGcnz6wTp_hXPSpP9ZuMs_93/view?usp=share_link)
 
+[Tutorial 3: Analysis of 10X Genomics adult mouse contex ATAC v2 Chromium X type](https://htmlpreview.github.io/?https://github.com/ChenMengjie/CREscendo/blob/main/Tutorials/CREscendo_10X_adult_mouse.html)
 
-[CRE annotations](https://github.com/ChenMengjie/CREscendo/blob/main/data/GRCh38-cCREs.bed)
+[Pre-processed dataset 3](https://drive.google.com/open?id=17QMX7Db_8LEN_oM6Hsu4hRLPzjuur1tT&usp=drive_fs)
+
+[Human hg38 CRE annotations](https://github.com/ChenMengjie/CREscendo/blob/main/data/GRCh38-cCREs.bed)
+
 
 ### Author
 
