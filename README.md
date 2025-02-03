@@ -18,7 +18,7 @@ devtools::install_github("ChenMengjie/CREscendo")
 ## Workflow
 
 
-![workflow](https://github.com/ChenMengjie/CREscendo/blob/main/image/workflow.png)
+![workflow](https://github.com/ChenMengjie/CREscendo/blob/main/image/diagram.png)
 
 ## Tutorial
 
