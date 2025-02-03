@@ -15,6 +15,11 @@ Specifically, CREscendo segments each peak into designated regions such as CRE1,
 devtools::install_github("ChenMengjie/CREscendo")
 ```
 
+## Workflow
+
+
+![workflow](https://github.com/ChenMengjie/CREscendo/blob/main/image/workflow.png)
+
 ## Tutorial
 
 
